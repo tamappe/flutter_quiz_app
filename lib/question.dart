@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
+class Person {
+  String name;
+  int age;
+
+  Person({this.name, this.age = 30});
+
+  Person.veryOld(this.name) {
+    age = 60;
+  }
+}
+
 class Question extends StatelessWidget {
   final String questionText;
 
+  Person person = Person.veryOld("aaaa");
   Question(this.questionText);
 
   @override
