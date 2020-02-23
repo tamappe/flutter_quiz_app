@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: Column(
+        body: _questionIndex < questions.length ? Column(
           children: [
             Question(
                 questions[_questionIndex]['questionText']
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
               return Answer(_answerQuestion, answer);
             }).toList()
           ],
-        ),
+        ) : Center(child: Text('何もありません'),),
       ),
     );
   }
